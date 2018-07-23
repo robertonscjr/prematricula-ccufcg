@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+	<html ng-app="preMatricula">
+		<head>
+            <title>Sistema de Pré-Matrícula</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="app.js"></script>
+            <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+  		<body>
+  			<br/>
+    		<div class="container panel panel-primary text-center" id="header" role="banner">
+				<div class="row">
+					<p>
+					<div class="col-sm-2 col-xs-3">
+						<a href="./"><img src="https://seeklogo.com/images/U/ufcg_universidade_federal_de_campina_grande-logo-E8B3971276-seeklogo.com.png" width="65 alt="Universidade Federal de Campina Grande"></a>
+					</div>
+					<div class="col-sm-8 col-xs-8 hidden-xs hidden-print">
+						<h1><a href="./">Sistema de Pré-Matrícula</a></h1>
+					</div>
+					<div class="col-sm-2 col-xs-1 hidden-xs hidden-print">
+						<a href="./"><img src="http://www.computacao.ufcg.edu.br/_/rsrc/1520453835503/administracao/marca_computacao_ufcg_vertical_producao.jpg" width="90 alt="Logo Computação"></a>
+					</div>
+				</div>
+				<p>
+			</div>
+			<div class="container panel panel-primary" id="conteudo" role="main">
+			<p>
+				<form class="form-horizontal" role="form" name="login_form" method="post" action="Controlador">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="login">E-mail/Login</label>
+						<div class="col-sm-6">
+							<input name="login" type="text" class="form-control" id="login" size="8" maxlength="20" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="senha">Senha</label>
+						<div class="col-sm-6">
+							<input class="form-control" name="senha" type="password" maxlength="20" id="senha" size="8">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-xs-offset-1 col-sm-6">
+							<div class="radio">
+								<label>
+									<input id="radio_alu" type="radio" name="command" value="AlunoLogin" checked>Aluno
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input id="radio_coo" type="radio" name="command" value="CoordenacaoLogin" >Coordenação
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-primary" type="submit">OK</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</body>
+	</html>
