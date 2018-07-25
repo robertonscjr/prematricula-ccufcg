@@ -76,8 +76,8 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 	         "nome" : "loac",
 	         "numero_vagas" : 3,
 	         "carga_horaria" : 60,
-		 "creditos" : 4,
-		 "grade" : "ambas"
+	         "creditos" : 4,
+	         "grade" : "ambas"
 	     }
 	  }
 	  ```
