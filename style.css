@@ -88,3 +88,14 @@ a[href]:after{content:none!important}.historico pre{padding:0;margin:0;border:0;
 #menu select{
     color:#000
 }
+
+.button {
+    background-color: #357ebd;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
