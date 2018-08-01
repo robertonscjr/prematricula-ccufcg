@@ -72,8 +72,8 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 * **JSON Request:**
 	* ```javascript
 	  {
-	     "usuario" : "coordenador",
-	     "senha" : "coordenador",
+	     "login" : "coordenador",
+	     "password" : "coordenador",
 	     "disciplina" : {
 	         "codigo" : 1,  
 	         "nome" : "loac",
@@ -98,15 +98,39 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 * **JSON Request:**
 	* ```javascript
 	  {
-	     "usuario" : "coordenador",
-	     "senha" : "coordenador"
+	     "login" : "coordenador",
+	     "password" : "coordenador"
 	  }
 	  ```
 * **Success Response:**
   * **Code:** `200` <br /> **Content:** 
 	  * ```javascript
 	    {
-	       "csv" : ""
+	       "csv" : "nome,email,matricula,periodo,disciplinas\nfulano,fulano@ccc.ufcg.edu.br,1111,20171,[codigo1,codigo2]"
+	    }
+		```		
+* **Error Response:**
+  * **Code:** `400 BAD REQUEST` and `401 UNAUTHORIZED`<br />
+  
+  ## 3.3. Mudar Senha
+  Coordenador muda a sua senha no sistema.
+
+* **URL**: `/coordenador/mudar-senha`
+* **Method:** `POST`
+
+* **JSON Request:**
+	* ```javascript
+	  {
+	     "login" : "coordenador",
+	     "password" : "coordenador"
+	     "newPassword" : "new_password"
+    }
+	  ```
+* **Success Response:**
+  * **Code:** `200` <br /> **Content:** 
+	  * ```javascript
+	    {
+	       "message" : "Success!"
 	    }
 		```		
 * **Error Response:**
