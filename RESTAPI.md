@@ -1,7 +1,8 @@
 #  REST API Endpoints
 Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 
-## Obter disciplinas cadastradas
+# 1. Disciplinas
+## 1.1. Obter disciplinas cadastradas
   Retorna informaçes sobre disciplinas cadastradas no sistema.
 
 * **URL**: `/disciplinas`
@@ -18,8 +19,9 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 		```	
 * **Error Response:**
   * **Code:** `400 BAD REQUEST`<br />
-  
-## Cadastrar aluno
+
+# 2. Alunos
+## 2.1. Cadastrar aluno
   Aluno realiza cadastro passando informações sobre seu vínculo com o curso.
 
 * **URL**: `/aluno`
@@ -39,7 +41,7 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 * **Error Response:**
   * **Code:** `400 BAD REQUEST` and `401 UNAUTHORIZED`<br />
   
-## Realizar pré-matrícula
+## 2.2. Realizar pré-matrícula
   Aluno realiza pré-matrícula passando informações sobre disciplinas desejadas.
 
 * **URL**: `/aluno/pre-matricula`
@@ -60,7 +62,8 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
     * `{ "message" : "JSON Mal formado" }`
     * `{ "message" : "Disciplinas não atendem o número de créditos" }`
 
-## Cadastrar disciplina
+# 3. Coordenador
+## 3.1. Cadastrar disciplina
   Coordenador cadastra uma disciplina no sistema.
 
 * **URL**: `/coordenador/cadastro-disciplina`
@@ -69,8 +72,8 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 * **JSON Request:**
 	* ```javascript
 	  {
-	     "usuario" : "coordenador",
-	     "senha" : "coordenador",
+	     "login" : "coordenador",
+	     "password" : "coordenador",
 	     "disciplina" : {
 	         "codigo" : 1,  
 	         "nome" : "loac",
@@ -86,7 +89,7 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 * **Error Response:**
   * **Code:** `400 BAD REQUEST` and `401 UNAUTHORIZED`<br />  
   
-## Exportar CSV
+## 3.2. Exportar CSV
   Coordenador exporta um CSV com as pré-matrículas realizadas no sistema.
 
 * **URL**: `/coordenador/exporta-csv`
@@ -95,8 +98,8 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 * **JSON Request:**
 	* ```javascript
 	  {
-	     "usuario" : "coordenador",
-	     "senha" : "coordenador"
+	     "login" : "coordenador",
+	     "password" : "coordenador"
 	  }
 	  ```
 * **Success Response:**
@@ -104,6 +107,30 @@ Esta seção provê uma lista detalhada dos endpoints disponíveis no back-end.
 	  * ```javascript
 	    {
 	       "csv" : "nome,email,matricula,periodo,disciplinas\nfulano,fulano@ccc.ufcg.edu.br,1111,20171,[codigo1,codigo2]"
+	    }
+		```		
+* **Error Response:**
+  * **Code:** `400 BAD REQUEST` and `401 UNAUTHORIZED`<br />
+  
+  ## 3.3. Mudar Senha
+  Coordenador muda a sua senha no sistema.
+
+* **URL**: `/coordenador/mudar-senha`
+* **Method:** `POST`
+
+* **JSON Request:**
+	* ```javascript
+	  {
+	     "login" : "coordenador",
+	     "password" : "coordenador"
+	     "newPassword" : "new_password"
+    }
+	  ```
+* **Success Response:**
+  * **Code:** `200` <br /> **Content:** 
+	  * ```javascript
+	    {
+	       "message" : "Success!"
 	    }
 		```		
 * **Error Response:**
