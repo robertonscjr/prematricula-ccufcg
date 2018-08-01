@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema de Pré-Matrícula</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body id="corpo">
+    <div class="container panel panel-primary text-center" id="header" role="banner">
+        <div class="row">
+            <p>
+                <div class="col-sm-2 col-xs-3">
+                    <a href="./">
+                        <img src="https://seeklogo.com/images/U/ufcg_universidade_federal_de_campina_grande-logo-E8B3971276-seeklogo.com.png" width="65 alt="
+                            Universidade Federal de Campina Grande "></a>
+    					</div>
+    					<div class="col-sm-8 col-xs-8 hidden-xs hidden-print ">
+    						<h1><a href="./ ">Sistema de Pré-Matrícula</a></h1>
+    					</div>
+    					<div class="col-sm-2 col-xs-1 hidden-xs hidden-print ">
+    						<a href="./ "><img src="http://www.computacao.ufcg.edu.br/_/rsrc/1520453835503/administracao/marca_computacao_ufcg_vertical_producao.jpg
+                            " width="90 alt="Logo Computação">
+                    </a>
+                </div>
+        </div>
+        <p>
+    </div>
+    <!-- <div id="faixaAviso"></div> -->
+    <div class="container panel panel-primary hidden-print" id="menu" role="navigation">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="../coordenador/indexCoordenador.html">
+                    <span class="glyphicon glyphicon-home"></span>
+                    <span class="sr-only">Página Inicial</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a id="alunoInfo" role="button" data-toggle="dropdown" href="#">Minhas informações
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="alunoInfo">
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="../Coordenador/indexCoordenador.html">Cadastro</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a id="alunoMatriculas" role="button" data-toggle="dropdown" href="#">Matrículas
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="alunoMatriculas">
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="../Coordenador/cadastraDisciplina.html">Cadastrar Disciplinas</a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="../Coordenador/disciplinasCoordenador.html">Disciplinas Cadastradas</a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="#export">Exportar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a id="alunoUsuario" role="button" data-toggle="dropdown" href="#">Usuário
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="alunoUsuario">
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="https://docs.google.com/document/d/1xDl6HnSt1t4Xgg-0qtC_ESXOAU1zjFizUQXKrRSaxAM/edit"
+                            target="_blank">Ajuda</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="../index.html">Sair</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container panel panel-primary" id="conteudo" role="main">
+        <script type="text/javascript">
+            $(function () {
+                var anterior = "";
+                $('#tabOferta > tbody > tr > td:first-child').each(function (index, td) {
+                    if ($(td).html() != anterior) {
+                        anterior = $(td).html();
+                        $(td).parent().css("border-top", "3px solid #428bca");
+                    }
+                });
+            });
+        </script>
+        <h2>Disciplinas Ofertadas em 2018.2</h2>
+        <div class="row">
+            <div class="col-sm-2 col-xs-3 text-right">
+                <b>Curso:</b>
+            </div>
+            <div class="col-sm-10 col-xs-9">14102100 - CIÊNCIA DA COMPUTAÇÃO - D</div>
+        </div>
+        <hr>
+        <div class="table-responsive" id="listagem
+        ">
+
+        </div>
+    </div>
+</body>
+
+</html>
