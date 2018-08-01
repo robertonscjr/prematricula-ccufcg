@@ -19,7 +19,7 @@ public class DisciplinaController {
 	private DisciplinaRepository repositorio;
 	
 	@GetMapping("/disciplinas")
-	public @ResponseBody Iterable<Disciplina> getAlunos() {
+	public @ResponseBody Iterable<Disciplina> getDisciplinas() {
 		Iterable<Disciplina> disciplinas = repositorio.findAll();
 		return disciplinas;
 	}
